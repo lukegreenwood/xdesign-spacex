@@ -5,14 +5,18 @@ export const LaunchList = ({ items, filter, sort }) => {
   let filteredItems = [...items];
 
   if (filter !== "") {
-    //write filter function below
+    filteredItems = items.filter((launch) => {
+      const date = new Date(launch.launch_date_utc);
+
+      return date.getFullYear() === parseInt(filter);
+    });
   }
 
   //Bug in the sorting function below
   const launches = filteredItems.sort((a, b) => {
     const x = a.launch_year;
     const y = b.launch_year;
-    return sort ? y - x : x - y;
+    return sort ? x - y : y - x;
   });
 
   return (
