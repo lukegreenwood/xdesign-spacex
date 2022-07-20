@@ -5,7 +5,7 @@ export const LaunchList = ({ items, filter, sort }) => {
   let filteredItems = [...items];
 
   if (filter !== "") {
-    filteredItems = items.filter((launch) => filter === launch.launch_year);
+    filteredItems = items.filter(({ launch_year }) => filter === launch_year);
   }
 
   //Bug in the sorting function below
