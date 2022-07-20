@@ -5,7 +5,7 @@ import { Button } from "../../components/Button";
 import { useLaunchContext } from "../../contexts/LaunchContext/LaunchContext";
 
 export const Header = () => {
-  const { filter } = useLaunchContext();
+  const { filter, listLaunches } = useLaunchContext();
   return (
     <header className="app__header">
       <div className="app__logo">
@@ -18,7 +18,7 @@ export const Header = () => {
       </div>
       <Button
         filter={filter}
-        //missing onClick
+        onClick={listLaunches}
         classes="button button--reload"
         label={LABEL.RELOAD}
         allowDisabledState={false}
