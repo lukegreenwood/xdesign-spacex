@@ -14,9 +14,9 @@ export const LaunchList = ({ items, filter, sort }) => {
 
   //Bug in the sorting function below
   const launches = filteredItems.sort((a, b) => {
-    const x = a.launch_year;
-    const y = b.launch_year;
-    return sort ? x - y : y - x;
+    const x = a.launch_date_unix;
+    const y = b.launch_date_unix;
+    return sort ? y - x : x - y;
   });
 
   return (
