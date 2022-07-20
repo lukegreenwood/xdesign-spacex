@@ -1,8 +1,13 @@
 import React from "react";
+import moment from "moment";
 
 export const LaunchItem = ({ item, index }) => {
-  //missing rocket name
-  const { flight_number, mission_name, launch_date_utc } = item;
+  const {
+    flight_number,
+    mission_name,
+    launch_date_utc,
+    rocket: { rocket_name },
+  } = item;
 
   return (
     <li key={index}>
@@ -11,11 +16,8 @@ export const LaunchItem = ({ item, index }) => {
         <span>{`${mission_name}`}</span>
       </div>
       <div>
-        <span>
-          {/* use moment here */}
-          <span>{launch_date_utc}</span>
-          {/* missing rocket name */}
-        </span>
+        <span>{moment(launch_date_utc).format("Do MMM YYYY")}</span>
+        {rocket_name}
       </div>
     </li>
   );
