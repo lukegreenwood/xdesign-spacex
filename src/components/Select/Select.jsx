@@ -3,10 +3,7 @@ import cx from "classnames";
 import { useLaunchContext } from "../../contexts/LaunchContext";
 
 const getDedupedYears = (items) => {
-  const allYears = items.map((launch) => {
-    const date = new Date(launch.launch_date_utc);
-    return date.getFullYear();
-  });
+  const allYears = items.map((launch) => launch.launch_year);
   return Array.from(new Set(allYears));
 };
 
