@@ -31,6 +31,8 @@ export const LaunchProvider = ({ children }) => {
             setItems(response);
             setStatus("");
           } catch (error) {
+            // Send this to a logger or something that will capture it
+            console.error("Error getting launches", error);
             setStatus(STATUS.ERROR);
           }
         }, []),

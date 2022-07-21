@@ -46,6 +46,18 @@
     justify-content: flex-end;
   }
 
+  &__message {
+    font-size: 1.6rem;
+    padding: 1.6rem;
+    border-radius: 10px;
+    margin: 3.2rem 0;
+    background-color: #e8eaf6;
+
+    &--error {
+      background-color: #ffebee;
+    }
+  }
+
   @media (max-width: $breakpoint-wide) {
     &__main-image {
       max-width: 40rem;

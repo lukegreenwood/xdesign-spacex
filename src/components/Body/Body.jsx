@@ -36,9 +36,9 @@ export const Body = () => {
           />
         </div>
         {status === STATUS.LOADING ? (
-          <p>{LABEL.LOADING}</p>
+          <p className="app__message">{LABEL.LOADING}</p>
         ) : status === STATUS.ERROR ? (
-          <p>{LABEL.ERROR}</p>
+          <p className="app__message app__message--error">{LABEL.ERROR}</p>
         ) : (
           <LaunchList items={items} filter={filter} sort={sort} />
         )}
